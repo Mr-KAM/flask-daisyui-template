@@ -3,11 +3,11 @@
 # **Flask-daisyui-template v1** : Modèle d'Application Flask
 
 un combot gagant <br>
-![Flask Logo](https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg)
+![Flask Logo](https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg | width=200)
 [Site officiel de Flask](https://flask.palletsprojects.com/)
 # +
 
-![DaisyUI Logo](https://img.daisyui.com/images/daisyui-logo/daisyui-logotype.svg)
+![DaisyUI Logo](https://img.daisyui.com/images/daisyui-logo/daisyui-logotype.svg | width=200)
 
 [Site officiel de DaisyUI](https://daisyui.com/)
 
