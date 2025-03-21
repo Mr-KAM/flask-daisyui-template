@@ -35,7 +35,8 @@ Utilisez ce modèle pour démarrer votre projet plus rapidement. Il inclut les e
 * **Flask-Themes** - Permet de gérer plusieurs thèmes d'apparence.
 * **Flask-WTF** - Intégration de WTForms avec CSRF, upload de fichiers et reCAPTCHA.
 
-Mais integre egalement daisyui a tailwinds en *offline*. Vous trouverez un fichier de macro de composentes de daisy ui 5 dans **app/templates/components.html.**
+
+Mais integre egalement daisyui a tailwinds en *offline*. Vous trouverez un fichier de macro de composentes de daisy ui 5 dans **app/templates/components.html.
 ---
 
 ## Prérequis
