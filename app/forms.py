@@ -3,10 +3,10 @@ from wtforms import StringField, TextAreaField, DateTimeField, PasswordField  # 
 from wtforms.validators import DataRequired  # Updated Required → DataRequired
 
 class ExampleForm(FlaskForm):
-    title = StringField(u'Título', validators=[DataRequired()])  # Fixed
-    content = TextAreaField(u'Conteúdo')
-    date = DateTimeField(u'Data', format='%d/%m/%Y %H:%M')
+    title = StringField(u'Titre', validators=[DataRequired()])  # Fixed
+    content = TextAreaField(u'Contenu')
+    date = DateTimeField(u'Date', format='%d/%m/%Y %H:%M')
 
 class LoginForm(FlaskForm):
-    user = StringField(u'Username', validators=[DataRequired()])  # Fixed
-    password = PasswordField(u'Password', validators=[DataRequired()])
+    user = StringField(u'Utilisateur', validators=[DataRequired()])  # Fixed
+    password = PasswordField(u'Mot de passe', validators=[DataRequired()])
