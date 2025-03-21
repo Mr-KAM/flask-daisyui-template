@@ -2,6 +2,15 @@
 
 # **Flask-daisyui-template v1** : Modèle d'Application Flask
 
+un combot gagant <br>
+![Flask Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flask_logo.svg/1200px-Flask_logo.svg.png)
+[Site officiel de Flask](https://flask.palletsprojects.com/)
+# +
+
+![DaisyUI Logo](https://img.daisyui.com/images/daisyui-logo.svg)
+
+[Site officiel de DaisyUI](https://daisyui.com/)
+
 **Un modèle complet d'application Flask avec des extensions utiles pré-configurées.**
 
 Utilisez ce modèle pour démarrer votre projet plus rapidement. Il inclut les extensions suivantes déjà configurées :
