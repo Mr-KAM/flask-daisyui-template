@@ -2,12 +2,19 @@
 
 # **Flask-daisyui-template v1** : Modèle d'Application Flask
 
-un combot gagant <br>
-![Flask Logo](https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg | width=200)
+Un combot gagant <br>
+## Flask
+Flask est un micro-framework Python léger pour construire des applications web. Il permet de créer facilement des API et des sites web dynamiques.
+
+![Flask Logo](https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg|width=200)
 [Site officiel de Flask](https://flask.palletsprojects.com/)
 # +
 
-![DaisyUI Logo](https://img.daisyui.com/images/daisyui-logo/daisyui-logotype.svg | width=200)
+## DaisyUI
+DaisyUI est une bibliothèque de composants UI pour Tailwind CSS. Elle offre des composants prêts à l'emploi pour créer des interfaces élégantes et modernes.
+
+
+![DaisyUI Logo](https://img.daisyui.com/images/daisyui-logo/daisyui-logotype.svg|width=200)
 
 [Site officiel de DaisyUI](https://daisyui.com/)
 
