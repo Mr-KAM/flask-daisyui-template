@@ -23,3 +23,5 @@ lm.setup_app(app)
 lm.login_view = 'login'
 
 from app import views, models
+with app.app_context():
+    db.create_all()

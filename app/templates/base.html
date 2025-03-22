@@ -1,21 +1,20 @@
 {% import "components.html" as components %}
 <!DOCTYPE html>
-<html lang="en" data-theme="fantasy">
+<html lang="fr" data-theme="fantasy">
 <head>
     <meta charset="UTF-8">
-    <head>
-        <link href="{{url_for('static', filename='node_modules/daisyui/daisyui.css')}}" rel="stylesheet"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static', filename='node_modules/daisyui/daisyui.css')}}" rel="stylesheet"
             type="text/css" />
-        <link href="{{url_for('static', filename='node_modules/daisyui/themes.css')}}" rel="stylesheet"
+    <link href="{{url_for('static', filename='node_modules/daisyui/themes.css')}}" rel="stylesheet"
             type="text/css" />
-        <script src="{{url_for('static', filename='node_modules/daisyui/imports.js')}}"></script>
-        <script src="{{url_for('static', filename='js/tailwinds.js')}}"></script>
-        <title>
-            {% block title %}
-            {% endblock %}
-        </title>
-    </head>
-    <body>
+    <script src="{{url_for('static', filename='node_modules/daisyui/imports.js')}}"></script>
+    <script src="{{url_for('static', filename='js/tailwinds.js')}}"></script>
+    <title>
+            {{title}}
+    </title>
+</head>
+<body>
     <!-- Début de la navigation -->
     {% block navbar %}
     <div class="navbar bg-base-100 shadow-sm" style="position:sticky;z-index:1000; top:0">
@@ -39,7 +38,7 @@
             <a class="btn btn-ghost text-xl" href="{{url_for('index')}}">APP ESA 2.1 {{ components.avatar_image("https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp", "squircle","8") }}</a>
         </div>
         <div class="navbar-end">
-            <button class="btn btn-ghost btn-circle">
+            <!-- <button class="btn btn-ghost btn-circle">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -55,7 +54,7 @@
                     </svg>
                     <span class="badge badge-xs badge-primary indicator-item"></span>
                 </div>
-            </button>
+            </button> -->
             {{ components.theme_toggle("dark", "light") }}
         </div>
     </div>

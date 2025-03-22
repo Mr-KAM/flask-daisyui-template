@@ -5,9 +5,43 @@ from app.forms import *
 from app.models import *
 
 
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    else:
+        form = RegisterForm()
+        if form.validate_on_submit():
+            user = User(username=form.user.data, email=form.email.data, name=form.name.data, image=form.image.data)
+            user.set_password(form.password.data)
+            db.session.add(user)
+            db.session.commit()
+            flash('Votre compte a été créé avec succès !', 'success')
+            return redirect(url_for('login'))
+    return render_template('signup.html', form=form, title="Sign up")
+
+
+
+@app.route('/login/', methods = ['GET', 'POST'])
+def login():
+    if g.user is not None and g.user.is_authenticated:
+        return redirect(url_for('index'))
+    if request.method == 'POST':
+        print(request.data)
+        # print(email)
+
+    return render_template('login.html',
+        title = 'Sign In')
+
+@app.route('/logout/')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
+
 @app.route('/')
 def index():
-	return render_template('index.html')
+	return render_template('index.html',title="Accueil")
 
 
 @app.route('/list/')
@@ -48,20 +82,7 @@ def before_request():
 def load_user(id):
     return User.query.get(int(id))
 
-@app.route('/login/', methods = ['GET', 'POST'])
-def login():
-    if g.user is not None and g.user.is_authenticated:
-        return redirect(url_for('index'))
-    if request.method == 'POST':
-        print(request.data)
-        # print(email)
 
-    return render_template('login.html',
-        title = 'Sign In')
 
-@app.route('/logout/')
-def logout():
-    logout_user()
-    return redirect(url_for('index'))
 
 # ====================
