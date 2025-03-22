@@ -18,7 +18,7 @@ def signup():
             db.session.commit()
             flash('Votre compte a été créé avec succès !', 'success')
             return redirect(url_for('login'))
-    return render_template('signup.html', form=form, title="Sign up")
+    return render_template('signup.html', form=form, title="signup")
 
 
 
@@ -31,7 +31,7 @@ def login():
         # print(email)
 
     return render_template('login.html',
-        title = 'Sign In')
+        title = 'login')
 
 @app.route('/logout/')
 def logout():
@@ -41,7 +41,10 @@ def logout():
 
 @app.route('/')
 def index():
-	return render_template('index.html',title="Accueil")
+    if current_user.is_authenticated:
+	    return render_template('index.html',title="Accueil")
+    else :
+        return redirect(url_for('login'))
 
 
 @app.route('/list/')
