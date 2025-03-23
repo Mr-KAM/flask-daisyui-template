@@ -3,6 +3,7 @@ from flask_login import login_user, logout_user, current_user, login_required
 from app import app, lm
 from app.forms import *
 from app.models import *
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -11,14 +12,20 @@ def signup():
         return redirect(url_for('index'))
     else:
         form = RegisterForm()
-        if form.validate_on_submit():
-            user = User(username=form.user.data, email=form.email.data, name=form.name.data, image=form.image.data)
-            user.set_password(form.password.data)
-            db.session.add(user)
-            db.session.commit()
-            flash('Votre compte a été créé avec succès !', 'success')
-            return redirect(url_for('login'))
+        if form.validate_on_submit() and form.password.data==form.confirm_password.data:
+            try :
+                user = User(username=form.user.data, email=form.email.data, name=form.name.data, telephone=form.telephone.data)
+                user.set_password(form.password.data)
+                db.session.add(user)
+                db.session.commit()
+                flash('Votre compte a été créé avec succès !', 'success')
+                return redirect(url_for('login'))
+            except :
+                flash("Erreur lors de la création de votre compte ! Email ou nom d'utilisateur dejà utilisé","error")
+        else :
+            flash("Cet utilisateur existe déjà !","warning")
     return render_template('signup.html', form=form, title="signup")
+
 
 
 

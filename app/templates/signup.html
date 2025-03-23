@@ -55,8 +55,10 @@
                     {% endfor %}
                 </div>
             {% endif %}
-        <button type="submit" class="btn btn-primary mt-3">S'inscrire</button>
+        <button type="submit" class="btn btn-neutral mt-3">S'inscrire</button>
     </fieldset>
     </form>
 </div>
+<br/>
+    <a href='{{url_for("login")}}' class="link text-primary">Déjà un compte ? <b>Connectez-vous ?</b></a>
 {% endblock %}
